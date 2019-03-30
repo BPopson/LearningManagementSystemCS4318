@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @exam.course.course_name %>
+</p>
+
+<p>
+  <strong>Exam name:</strong>
+  <%= @exam.exam_name %>
+</p>
+
+<% if current_administrator %>
+  <%= link_to 'Edit', edit_exam_path(@exam) %> |
+<% end %>
+<%= link_to 'Back', exams_path %>

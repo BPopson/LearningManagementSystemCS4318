@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @enrollment.student.full_name %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @enrollment.course.full_course_name %>
+</p>
+
+<% if current_administrator %>
+  <%= link_to 'Edit', edit_enrollment_path(@enrollment) %> |
+<% end %>
+<%= link_to 'Back', enrollments_path %>

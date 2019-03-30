@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Exam:</strong>
+  <%= @grade.exam.full_exam_name %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @grade.student.full_name %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @grade.grade %>
+</p>
+<% if current_administrator %>
+  <%= link_to 'Edit', edit_grade_path(@grade) %> |
+<% end %>
+<%= link_to 'Back', grades_path %>

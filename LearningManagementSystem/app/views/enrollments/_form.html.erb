@@ -1,0 +1,31 @@
+<%= form_with(model: enrollment, local: true) do |form| %>
+  <% if enrollment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(enrollment.errors.count, "error") %> prohibited this enrollment from being saved:</h2>
+
+      <ul>
+      <% enrollment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :student_id %>
+    <% if current_administrator %>
+      <%= collection_select(:enrollment, :student_id, Student.all.order(last_name: :asc, first_name: :desc), :id, :full_name) %>
+    <% elsif current_student %>
+      <%= collection_select(:enrollment, :student_id, [current_student], :id, :full_name) %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :course_id %>
+    <%= collection_select(:enrollment, :course_id, Course.all, :id, :full_course_name) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
