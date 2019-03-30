@@ -17,15 +17,15 @@ ActiveRecord::Schema.define(version: 2018_11_26_034141) do
     t.string "last_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username", null: false
-    t.string "password_digest", null: false
+    t.string "username"
+    t.string "password_digest"
   end
 
   create_table "courses", force: :cascade do |t|
     t.string "course_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "semester", null: false
+    t.string "semester"
   end
 
   create_table "enrollments", force: :cascade do |t|
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 2018_11_26_034141) do
     t.string "last_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username", null: false
-    t.string "password_digest", null: false
+    t.string "username"
+    t.string "password_digest"
     t.index ["username"], name: "index_students_on_username", unique: true
   end
 
