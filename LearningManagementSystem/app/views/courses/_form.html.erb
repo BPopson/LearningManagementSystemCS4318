@@ -21,6 +21,21 @@
     <%= form.text_field :semester %>
   </div>
 
+  <div class="field">
+    <%= form.label :course_size %>
+    <%= form.number_field :course_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :professor_id %>
+    <%= collection_select(:course, :professor_id, Professor.all, :id, :full_name) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

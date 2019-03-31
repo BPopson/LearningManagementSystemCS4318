@@ -8,6 +8,9 @@
       <th>Course ID</th>
       <th>Course name</th>
       <th>Semester</th>
+      <th>Course size</th>
+      <th>Location</th>
+      <th>Professor</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +21,9 @@
         <td><%= course.id %></td>
         <td><%= course.course_name %></td>
         <td><%= course.semester %></td>
+        <td><%= course.course_size %></td>
+        <td><%= course.location %></td>
+        <td><%= course.professor.full_name %></td>
         <% if current_administrator %>
           <td><%= link_to 'Show', course %></td>
           <td><%= link_to 'Edit', edit_course_path(course) %></td>

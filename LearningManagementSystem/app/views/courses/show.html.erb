@@ -10,6 +10,21 @@
   <%= @course.semester %>
 </p>
 
+<p>
+  <strong>Course size:</strong>
+  <%= @course.course_size %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @course.location %>
+</p>
+
+<p>
+  <strong>Professor:</strong>
+  <%= @course.professor.full_name %>
+</p>
+
 <% if current_administrator %>
   <%= link_to 'Edit', edit_course_path(@course) %> |
 <% end %>
