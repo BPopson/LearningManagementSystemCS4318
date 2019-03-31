@@ -2,8 +2,8 @@
 
 one:
   course_id: 1
-  exam_name: MyString
+  assignment_name: MyString
 
 two:
   course_id: 1
-  exam_name: MyString
+  assignment_name: MyString

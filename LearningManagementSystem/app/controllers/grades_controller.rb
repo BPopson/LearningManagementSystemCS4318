@@ -7,7 +7,7 @@ class GradesController < ApplicationController
   # GET /grades
   # GET /grades.json
   def index
-    @grades = Grade.joins(:student, :exam).select('grades.id, grades.exam_id, exams.exam_name, grades.student_id, students.first_name, students.last_name, grades.grade')
+    @grades = Grade.joins(:student, :assignment).select('grades.id, grades.assignment_id, assignments.assignment_name, grades.student_id, students.first_name, students.last_name, grades.grade')
     if current_student 
       @grades = @grades.where(grades: { student_id: current_student.id })
     end
@@ -75,6 +75,6 @@ class GradesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def grade_params
-      params.require(:grade).permit(:exam_id, :student_id, :grade)
+      params.require(:grade).permit(:assignment_id, :student_id, :grade)
     end
 end

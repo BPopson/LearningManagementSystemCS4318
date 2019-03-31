@@ -1,8 +1,4 @@
-class Student < ApplicationRecord
-  has_many :enrollments, :dependent => :destroy
-  has_many :courses, :through => :enrollments
-  has_many :assignments, :through => :courses
-
+class Professor < ApplicationRecord
   has_secure_password
 
   validates :username, presence: true, uniqueness: true

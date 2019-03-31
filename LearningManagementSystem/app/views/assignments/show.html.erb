@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @assignment.course.course_name %>
+</p>
+
+<p>
+  <strong>Assignment name:</strong>
+  <%= @assignment.assignment_name %>
+</p>
+
+<% if current_administrator %>
+  <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
+<% end %>
+<%= link_to 'Back', assignments_path %>

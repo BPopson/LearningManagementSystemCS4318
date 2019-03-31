@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :exam_id %>
-    <%= collection_select(:grade, :exam_id, Exam.all, :id, :full_exam_name) %>
+    <%= form.label :assignment_id %>
+    <%= collection_select(:grade, :assignment_id, Assignment.all, :id, :full_assignment_name) %>
 
   </div>
 
