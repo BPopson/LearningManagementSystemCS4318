@@ -7,7 +7,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments
   # GET /assignments.json
   def index
-    @assignments = Assignment.joins(:course).select('assignments.id, assignments.course_id, assignments.assignment_name, courses.course_name').reorder('course_name ASC')
+    @assignments = Assignment.joins(:course).select('assignments.id, assignments.course_id, assignments.assignment_name, assignments.max_grade, courses.course_name').reorder('course_name ASC')
   end
 
   # GET /assignments/1
@@ -72,6 +72,6 @@ class AssignmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def assignment_params
-      params.require(:assignment).permit(:course_id, :assignment_name)
+      params.require(:assignment).permit(:course_id, :assignment_name, :max_grade)
     end
 end

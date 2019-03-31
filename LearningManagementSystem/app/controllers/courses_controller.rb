@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all.reorder('course_name ASC')
+    @courses = Course.joins(:professor).select('courses.id, courses.course_name, courses.semester, courses.course_size, courses.location, professors.last_name, professors.first_name').reorder('course_name ASC')
   end
 
   # GET /courses/1
@@ -72,6 +72,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:course_name, :semester)
+      params.require(:course).permit(:course_name, :semester, :course_size, :location, :professor_id)
     end
 end
