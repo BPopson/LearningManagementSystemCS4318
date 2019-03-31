@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_03_30_223524) do
 
-  create_table "administrators", force: :cascade do |t|
+  create_table "administrators", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "email", null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_03_30_223524) do
     t.index ["username"], name: "index_administrators_on_username", unique: true
   end
 
-  create_table "assignments", force: :cascade do |t|
+  create_table "assignments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "course_id", null: false
     t.string "assignment_name", null: false
     t.integer "max_grade", null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_03_30_223524) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "courses", force: :cascade do |t|
+  create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "course_name", null: false
     t.string "semester", null: false
     t.integer "course_size", null: false
@@ -41,14 +41,14 @@ ActiveRecord::Schema.define(version: 2019_03_30_223524) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "enrollments", force: :cascade do |t|
+  create_table "enrollments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "student_id", null: false
     t.integer "course_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "grades", force: :cascade do |t|
+  create_table "grades", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "assignment_id", null: false
     t.integer "student_id", null: false
     t.integer "grade", null: false
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_03_30_223524) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "professors", force: :cascade do |t|
+  create_table "professors", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "email", null: false
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2019_03_30_223524) do
     t.index ["username"], name: "index_professors_on_username", unique: true
   end
 
-  create_table "students", force: :cascade do |t|
+  create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "email", null: false
