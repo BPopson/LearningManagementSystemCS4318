@@ -10,6 +10,11 @@
   <%= @assignment.assignment_name %>
 </p>
 
+<p>
+  <strong>Maximum grade:</strong>
+  <%= @assignment.max_grade %>
+</p>
+
 <% if current_administrator %>
   <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
 <% end %>
