@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.joins(:professor).select('courses.id, courses.course_name, courses.semester, courses.course_size, courses.location, professors.last_name, professors.first_name').reorder('course_name ASC')
+    @courses = Course.joins(:professor).select('courses.id, courses.course_name, courses.semester, courses.course_size, courses.location, courses.professor_id, professors.id, professors.last_name, professors.first_name').reorder('course_name ASC')
   end
 
   # GET /courses/1
