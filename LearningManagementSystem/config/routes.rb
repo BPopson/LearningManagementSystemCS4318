@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :administrators
+  resources :professors
   resources :grades
   resources :assignments
   resources :courses

@@ -15,6 +15,8 @@
   <div><%= link_to 'View Grades', controller: 'grades' %></div>
   <!-- Navigate to administrators -->
   <div><%= link_to 'View Administrators', controller: 'administrators' %></div>
+  <!-- Navigate to profesors -->
+  <div><%= link_to 'View Professors', controller: 'professors' %></div>
 <% elsif current_student %>
   <!-- Edit profile button -->
   <div><%= link_to 'Edit Profile', controller: 'students', action: 'edit', id: @student_id %></div>
